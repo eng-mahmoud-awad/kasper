@@ -1,0 +1,812 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Fira Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+html {
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --mainColor: #161f32;
+  --textMainColor: #3d506f;
+  --textSecondColor: #7f90a5;
+}
+h2 {
+  color: var(--textMainColor);
+  margin: 10px 0;
+}
+h3 {
+  color: var(--textSecondColor);
+  font-weight: 300;
+  margin: 10px 0;
+}
+p {
+  color: var(--textSecondColor);
+  text-align: center;
+}
+.container {
+  /* width: 800px; */
+  margin: 0px auto;
+  padding: 0px 15px;
+}
+/* @media (min-width: 400px) {
+  .container {
+    width: 350px;
+  } */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+.header {
+  padding: 15px;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .container .links {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 767px) {
+    .header .container .links {
+        display: none;
+    }
+    .header .container .logo {
+        margin: 0 auto;
+    }
+}
+.header .container .logo {
+  height: 70px;
+}
+.header .container .links a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: var(--mainColor);
+}
+.landing {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  background: url(../images/landing2.svg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.landing .container {
+  /* width: 100%;
+    height: fit-content; */
+  background-color: var(--mainColor);
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+  padding: 50px;
+  position: absolute;
+}
+.landing .container .landContent {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.circle {
+  width: 15px;
+  height: 15px;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 50%;
+  margin: 20px 0;
+  position: relative;
+}
+.circle::before {
+  content: "";
+  position: absolute;
+  height: 1px;
+  min-width: 20vw;
+  background-color: white;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.circle::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  min-width: 20vw;
+  background-color: white;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.landing .container .landContent p {
+  text-align: center;
+  color: white;
+  line-height: 1.9;
+  min-width: 200px;
+}
+.landing .container .landContent button {
+  padding: 15px;
+  text-decoration: none;
+  text-align: center;
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+}
+.services {
+  position: relative;
+}
+.services .container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.services .container h2 {
+  color: var(--textMainColor);
+  margin: 40px 0 10px 0;
+}
+.services .container h3 {
+  color: var(--textSecondColor);
+  margin: 10px;
+}
+.services .container .circle {
+  border: 1px solid var(--textMainColor);
+  margin-top: 5px;
+}
+.services .container .circle::before {
+  background-color: var(--textMainColor);
+}
+.services .container .circle::after {
+  background-color: var(--textMainColor);
+}
+.services .container p {
+  color: var(--textSecondColor);
+  max-width: 800px;
+  text-align: center;
+}
+.services {
+  /* width: 1000px; */
+  padding: 50px;
+}
+.services .container .servicesBoxes {
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  margin-top: 50px;
+  gap: 15px;
+}
+.services .container .serviceBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.services .container .servicesBoxes .serviceBox h5 {
+  color: var(--mainColor);
+  font-size: 24px;
+  font-weight: 300;
+  margin: 15px 0;
+}
+.services .container .servicesBoxes .serviceBox i {
+  font-size: 40px;
+  color: white;
+  background-color: var(--textMainColor);
+  padding: 15px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.services .container .servicesBoxes .serviceBox p {
+  color: var(--textSecondColor);
+  font-weight: 300;
+  margin: 0;
+}
+.sec3 {
+  /* background-color: var(--mainColor); */
+  background: url(../images/design-features.jpg);
+  color: white;
+  text-align: center;
+  padding: 60px;
+  position: relative;
+}
+.sec3Overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: #19253db7;
+}
+.sec3 .container {
+  position: relative;
+  z-index: 3;
+}
+.sec3 p {
+  margin: 0 auto;
+  width: 70%;
+  font-size: 24px;
+  text-align: center;
+  color: white;
+}
+.modern {
+  padding: 50px;
+  width: 100%;
+}
+.modern .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.modern .container .circle {
+  border: 1px solid var(--textSecondColor);
+}
+.modern .container .circle::before {
+  background-color: var(--textSecondColor);
+}
+.modern .container .circle::after {
+  background-color: var(--textSecondColor);
+}
+.modern .container {
+  max-width: 800px;
+}
+.btns {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.btns button {
+  width: fit-content;
+  margin-right: 10px;
+  background-color: var(--mainColor);
+  padding: 10px 15px;
+  outline: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+.btns button:first-child {
+  background-color: #00c7fc;
+}
+.shuffles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+  width: 100%;
+}
+.shuffles .shuffleImg img {
+  max-width: 100%;
+}
+.sec4 {
+  /* width: 100%; */
+  padding: 50px;
+  background-color: var(--mainColor);
+  position: relative;
+}
+.sec4 .container {
+  /* width: 800px; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 50px;
+  /* justify-content: center; */
+  /* align-items: center; */
+  align-items: center;
+  /* margin: 0 auto; */
+}
+.sec4 .container .sec4Img img {
+  max-width: 100%;
+}
+.sec4 .container .sec4Cont {
+  /* max-width: 100%; */
+}
+.sec4 .container .sec4Cont p {
+  text-align: left;
+}
+.sec4 .container .sec4Cont h2 {
+  color: white;
+  font-weight: 500;
+}
+.sec4 .container .sec4Cont .icons {
+  color: white;
+  margin-top: 15px;
+}
+.sec4 .container .sec4Cont .icons .ic {
+  color: white;
+  margin-top: 15px;
+}
+.sec4::before {
+  content: "";
+  /* width: 15px; */
+  /* height: 15px; */
+  position: absolute;
+  left: 300px;
+  top: -30px;
+  border-width: 15px;
+  border-color: transparent transparent var(--mainColor) transparent;
+  border-style: solid;
+}
+.sec5 {
+  padding: 50px;
+  position: relative;
+}
+.sec5 .container {
+  max-width: 800px;
+}
+.sec5 .container i {
+  text-align: center;
+  font-size: 30px;
+  padding: 10px;
+  background-color: var(--mainColor);
+  color: white;
+  /* margin-top: 15px; */
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+}
+.sec5 .container h2,
+.sec5 .container p {
+  text-align: center;
+}
+.sec5 .container h2 {
+  margin: 40px 0 25px 0;
+  font-weight: 400;
+}
+.sec5 .container button {
+  position: absolute;
+  left: 50%;
+  width: fit-content;
+  padding: 10px 15px;
+  border: none;
+  background-color: var(--mainColor);
+  color: white;
+  text-align: center;
+  margin: 20px auto;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+
+.humans {
+  background-color: #222c40;
+  padding: 50px;
+  margin-top: 50px;
+  position: relative;
+}
+.humans .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 800px;
+}
+.humans .container p {
+  max-width: 700px;
+  color: white;
+  font-weight: 300;
+}
+.humans .container h2,
+.humans .container h3 {
+  color: white;
+}
+.humans .container .huCircles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 40px;
+}
+.humans .container .huCircles .circleBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.humans .container .huCircles .circleBox h2 {
+  font-weight: 400;
+}
+.humans .container .huCircles .circleBox h3 {
+  font-weight: 200;
+}
+.humans .container .huCircles .circleBox img {
+  max-width: 100%;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+.sec6 {
+  background-color: var(--mainColor);
+  padding: 20px;
+}
+.sec6 .container {
+  text-align: left;
+  max-width: 800px;
+}
+.sec6 .container h2 {
+  color: white;
+}
+.sec6 .container p {
+  text-align: left;
+  color: white;
+  font-weight: 300;
+}
+.sec6 .container .ic {
+  text-align: left;
+  color: white;
+  font-weight: 300;
+}
+.sec6 .container .ic i {
+  margin: 10px 10px;
+}
+
+.skills {
+  padding: 50px;
+}
+.skills .container {
+  text-align: center;
+  max-width: 800px;
+}
+.skills .container h2 {
+  font-size: 30px;
+  font-weight: 400;
+}
+.skills .container p {
+  max-width: 800px;
+  text-align: center;
+  margin: 10px auto;
+}
+.skills .container .skillsBoxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 50px;
+  width: 100%;
+  margin-top: 40px;
+}
+.skills .container .skillsBoxes .skillBox {
+  text-align: left;
+}
+.skills .container .skillsBoxes .skillBox p {
+  text-align: left;
+}
+.skills .container .skillsBoxes .skillBox h2 {
+  font-weight: 400;
+  font-size: 24px;
+}
+.skills .container .skillsBoxes .skillBox button {
+  border: none;
+  color: white;
+  background-color: var(--mainColor);
+  padding: 10px 15px;
+  cursor: pointer;
+}
+.skills .container .skillsBoxes .skillBox:last-child {
+  display: flex;
+  /* align-items: center; */
+  flex-direction: column;
+}
+.skills .container .skillsBoxes .skillBox:last-child span {
+  padding: 10px 15px;
+  color: white;
+  background-color: var(--mainColor);
+  margin-bottom: 20px;
+}
+.skills .container .skillsBoxes .skillBox:last-child span:first-child {
+  width: 80%;
+}
+.skills .container .skillsBoxes .skillBox:last-child span:nth-child(3) {
+  width: 70%;
+}
+.skills .container .skillsBoxes .skillBox:last-child span:nth-child(4) {
+  width: 90%;
+}
+.skills .container .skillsBoxes .skillBox:last-child span:nth-child(5) {
+  width: 60%;
+}
+
+.social {
+  background-color: var(--mainColor);
+  padding: 50px;
+}
+.social .container {
+  max-width: 800px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 50px;
+  width: 100%;
+}
+.social .container .socialBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.social .container .socialBox .socialTxt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.social .container .socialBox i {
+  font-size: 60px;
+  color: #00c7fc;
+  margin-right: 15px;
+  /* display: inline-block;*/
+}
+.social .container .socialBox .socialTxt span:nth-child(1) {
+  color: white;
+  font-size: 40px;
+}
+.social .container .socialBox .socialTxt span:nth-child(2) {
+  display: inline-block;
+  color: white;
+  font-size: 15px;
+}
+.grid {
+  padding: 50px;
+}
+.grid .container {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.grid .container .circle {
+  border-color: var(--textSecondColor);
+}
+.grid .container .circle::after {
+  background-color: var(--textSecondColor);
+}
+.grid .container .circle::before {
+  background-color: var(--textSecondColor);
+}
+
+.grid .container i {
+  margin-top: 50px;
+  color: white;
+  font-size: 24px;
+  background-color: var(--mainColor);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-bottom: 40px;
+}
+.grid .container .mail {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.grid .container .mail input {
+  padding: 10px 15px;
+  color: white;
+  background-color: var(--mainColor);
+  outline: none;
+  border: none;
+  min-width: 30vw;
+  margin-right: 15px;
+}
+.grid .container .mail button {
+  padding: 10px 15px;
+  color: white;
+  background-color: var(--mainColor);
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.customers {
+  background-color: var(--mainColor);
+  padding: 50px;
+}
+.customers .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.customers .container h2 {
+  color: white;
+  font-weight: 400;
+}
+.customers .container p {
+  color: white;
+  max-width: 800px;
+}
+.customers .container .logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+.customers .container .logos img {
+  margin-right: 40px;
+  width: 100px;
+  margin-bottom: 50px;
+}
+
+.testim {
+  padding: 50px;
+}
+.testim .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 800px;
+}
+.testim .container h2 {
+  font-weight: 400;
+}
+.testim .container .circle {
+  border-color: var(--textSecondColor);
+}
+.testim .container .circle::after {
+  background-color: var(--textSecondColor);
+}
+.testim .container .circle::before {
+  background-color: var(--textSecondColor);
+}
+.ask {
+  padding: 50px;
+  background-color: var(--mainColor);
+}
+.ask .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 800px;
+}
+.ask .container > h2 {
+  color: white;
+  font-weight: 400;
+}
+.ask .container h3 {
+  color: white;
+  font-weight: 100;
+}
+.contactBoxes {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+@media (max-width: 767px) {
+  .contactBoxes {
+    justify-content: center;
+  }
+  .contactBox {
+    margin-bottom: 30px;
+  }
+}
+.contactBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contactBox i {
+  color: var(--mainColor);
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.contactBox h2 {
+  font-weight: 200;
+  color: white;
+}
+.contactBox h3 {
+  font-weight: 100;
+}
+.ask .container form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  color: white;
+}
+
+.ask .container form input:nth-child(1) {
+  width: calc((100% / 3) - 20px);
+  margin-right: 10px;
+}
+.ask .container form input:nth-child(2) {
+  width: calc((100% / 3) - 20px);
+  margin-right: 10px;
+}
+.ask .container form input:nth-child(3) {
+  width: calc((100% / 3) - 30px);
+}
+.ask .container form textarea {
+  width: 100%;
+  height: 300px;
+  margin-top: 15px;
+  color: white;
+}
+.ask .container form * {
+  padding: 10px 15px;
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+}
+.ask .container form button{
+    background-color: white;
+    color: var(--textMainColor);
+    margin: 20px auto;
+    cursor: pointer;
+
+}
+@media (max-width: 767px) {
+  .ask .container form {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .ask .container form input:nth-child(1),
+  .ask .container form input:nth-child(2),
+  .ask .container form input:nth-child(3) {
+    width: 100%;
+    margin-bottom: 15px;
+    margin-right: 0;
+  }
+}
+.log {
+    margin: 20px auto;
+    text-align: center;
+}
